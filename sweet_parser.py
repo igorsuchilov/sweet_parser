@@ -3,16 +3,14 @@ import json
 import csv
 import itertools
 
-# Check if the user has provided both: input and output file names as arguments
-try:
-    input_file = sys.argv[1]
-    output_file = sys.argv[2]
-except IndexError as e:
-    print("ARGUMENT ERROR: Please provide a JSON file as a first argument and output file name as a second argument")
-    sys.exit(1)
+def main(input_file, output_file):
+    """
+    Parser for sweets JSON file
 
-# Check if input file has correct extension .json
-if input_file.endswith("json"):
+    :param input_file (str): Path to input JSON file
+    :param output_file (str): Path to output file
+    :return: None
+    """
 
     with open(input_file, 'r') as input_json:
         sweets = json.load(input_json)
@@ -32,6 +30,20 @@ if input_file.endswith("json"):
             for batter_topping_combinations in itertools.product(batter_types_list, topping_types_list):
                 line_to_write = [item["id"], item["type"], item["name"], *batter_topping_combinations]
                 writer.writerow(line_to_write)
-else:
-    print("ARGUMENT ERROR: Please provide a valid JSON file as a first argument")
-    sys.exit(1)
+    
+
+if __name__ == "__main__":
+    # Check if the user has provided both: input and output file names as arguments
+    try:
+        input_file = sys.argv[1]
+        output_file = sys.argv[2]
+    except IndexError as e:
+        print("ARGUMENT ERROR: Please provide a JSON file as a first argument and output file name as a second argument")
+        sys.exit(1)
+    # Check if input file has correct extension .json
+    if input_file.endswith("json"):
+        main(input_file, output_file)
+    else:
+        print("ARGUMENT ERROR: Please provide a valid JSON file as a first argument")
+        sys.exit(1)
+
