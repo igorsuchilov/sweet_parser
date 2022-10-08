@@ -8,5 +8,6 @@ Run "sweet_parser.py" script with 2 arguments:
 - <input_file.json>
 - <output_file_name> (extension can be .csv, .table or omiited)
 
-*Usage:* [path to the script] [input file path] [output file path]
-*Sample:* /<home directory>/app/sweet_parser.py /<home directory>/app/sample.json /<home directory>/app/result/output.table
+**Usage:** [path to the script] [input file path] [output file path]
+
+**Sample:** /<home directory>/app/sweet_parser.py /<home directory>/app/sample.json /<home directory>/app/result/output.table
