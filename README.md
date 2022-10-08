@@ -10,4 +10,4 @@ Run "sweet_parser.py" script with 2 arguments:
 
 **Usage:** [path to the script] [input file path] [output file path]
 
-**Sample:** //<home directory>/app/sweet_parser.py //<home directory>/app/sample.json //<home directory>/app/result/output.table
+**Sample:** ~/app/sweet_parser.py ~/app/sample.json ~/app/result/output.table
